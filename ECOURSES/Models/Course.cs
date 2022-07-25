@@ -12,6 +12,6 @@ namespace ECOURSES.Models
         public int  Duration{ get; set; }
         public int TeacherID { get; set; }
 
-        public List<int>? subscount { get; set; } 
+        public List<Student>? subdeStudent { get; set; } 
     }
 }
