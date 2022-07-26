@@ -14,7 +14,5 @@ namespace ECOURSES.Models
         public string? Imag { get; set; }
         public string? Subjects { get; set; }
   
-        [NotMapped]
-        public List<Student>? StudentId { get; set; } 
     }
 }

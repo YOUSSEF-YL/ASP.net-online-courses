@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Views\Pages\" />
+    <Folder Include="wwwroot\images\Students\" />
+    <Folder Include="wwwroot\images\Teachers\" />
   </ItemGroup>
 
   <ItemGroup>
