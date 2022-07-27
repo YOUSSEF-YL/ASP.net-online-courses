@@ -1,4 +1,5 @@
-﻿using ECOURSES.Models;
+﻿using ECOURSES.Data;
+using ECOURSES.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,14 +9,18 @@ namespace ECOURSES.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDbContext _db;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+             
+
+            return View(_db);
         }
 
         public IActionResult About()

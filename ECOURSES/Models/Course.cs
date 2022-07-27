@@ -13,6 +13,6 @@ namespace ECOURSES.Models
         public int TeacherId { get; set; }
         public string? Imag { get; set; }
         public string? Subjects { get; set; }
-  
+        public virtual ICollection<Student> Students { get; set; }
     }
 }
