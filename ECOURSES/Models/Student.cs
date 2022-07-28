@@ -7,7 +7,7 @@
         public string Email { get; set; }
         public string imag { get; set; }
 
-        public virtual ICollection<Course> Courses { get; set; }
+       // public virtual ICollection<Course> Courses { get; set; }
 
     }
 }

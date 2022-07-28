@@ -21,21 +21,6 @@ namespace ECOURSES.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CourseStudent", b =>
-                {
-                    b.Property<int>("CoursesCourseID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentsStudentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CoursesCourseID", "StudentsStudentId");
-
-                    b.HasIndex("StudentsStudentId");
-
-                    b.ToTable("CourseStudent");
-                });
-
             modelBuilder.Entity("ECOURSES.Models.Course", b =>
                 {
                     b.Property<int>("CourseID")
@@ -56,7 +41,7 @@ namespace ECOURSES.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Subjects")
+                    b.Property<string>("SubjectsID")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeacherId")
@@ -65,6 +50,17 @@ namespace ECOURSES.Migrations
                     b.HasKey("CourseID");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("ECOURSES.Models.CourseStudent", b =>
+                {
+                    b.Property<int>("CourseID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.ToTable("CourseStudent");
                 });
 
             modelBuilder.Entity("ECOURSES.Models.Rating", b =>
@@ -117,6 +113,19 @@ namespace ECOURSES.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("ECOURSES.Models.Subject", b =>
+                {
+                    b.Property<string>("SubjectId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Imag")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SubjectId");
+
+                    b.ToTable("Subjects");
+                });
+
             modelBuilder.Entity("ECOURSES.Models.Teacher", b =>
                 {
                     b.Property<int>("TeacherId")
@@ -153,21 +162,6 @@ namespace ECOURSES.Migrations
                     b.HasKey("TeacherId");
 
                     b.ToTable("Teachers");
-                });
-
-            modelBuilder.Entity("CourseStudent", b =>
-                {
-                    b.HasOne("ECOURSES.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CoursesCourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ECOURSES.Models.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsStudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

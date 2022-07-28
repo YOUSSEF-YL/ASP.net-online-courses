@@ -16,5 +16,8 @@ namespace ECOURSES.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet <CourseStudent> CourseStudent  { get; set; }
     }
 }

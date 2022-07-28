@@ -1,14 +1,6 @@
 ﻿@model dynamic;
 
-@foreach (Teacher teacher in Model.Teachers)
-    {
-        <tr>
-            <td>@teacher.TeacherId</td>
-           
-            <td>@teacher.Name</td>
-          
-        </tr>
-    }
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -83,6 +75,8 @@
                 <h1>Explore Top Subjects</h1>
             </div>
             <div class="row">
+
+         
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="img/cat-1.jpg" alt="">
@@ -177,9 +171,10 @@
                         <img class="img-fluid" src="@("/images/Courses/"+@course.Imag)" alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i> Students</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i> @course.Duration min</small>
                             </div>
+                          
                             <a class="h5" href=""> @course.CourseName </a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">

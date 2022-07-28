@@ -2,6 +2,7 @@
 using ECOURSES.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Linq;
 
 namespace ECOURSES.Controllers
 {
@@ -18,7 +19,7 @@ namespace ECOURSES.Controllers
 
         public IActionResult Index()
         {
-             
+            
 
             return View(_db);
         }
