@@ -36,7 +36,7 @@ namespace ECOURSES.Controllers
 
         public IActionResult Teachers()
         {
-            return View();
+            return View(_db);
         }
 
         public IActionResult Courses()
