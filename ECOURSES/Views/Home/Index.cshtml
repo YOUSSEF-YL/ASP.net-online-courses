@@ -75,17 +75,21 @@
                 <h1>Explore Top Subjects</h1>
             </div>
             <div class="row">
-
+                @foreach (Subject subject in Model.Subjects)
+                {
+                    
+                     <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                            <img class="img-fluid" src="@("/images/Subjects/"+@subject.Imag)" alt="">
+                            <a class="cat-overlay text-white text-decoration-none" href="">
+                                <h4 class="text-white font-weight-medium">@subject.SubjectId</h4>
+                                <span>100 Courses</span>
+                            </a>
+                        </div>
+                     </div>
+                }
          
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="img/cat-1.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Web Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
+               
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="img/cat-2.jpg" alt="">
@@ -332,11 +336,13 @@
                                     <input type="email" class="form-control border-0 p-4" placeholder="Your email" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select a course</option>
-                                        <option value="1">Course 1</option>
-                                        <option value="2">Course 1</option>
-                                        <option value="3">Course 1</option>
+                                    <select class="custom-select border-0 px-4" style="height: 47px;">  
+
+                                         <option selected>Select a course</option>
+                                        @foreach (Course course in Model.Courses)
+                                        {
+                                            <option value="@course.CourseID"> @course.CourseName</option>
+                                        }
                                     </select>
                                 </div>
                                 <div>
