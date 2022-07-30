@@ -1,5 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ECOURSES.Data;
+using StackExchange.Redis;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ECOURSES.Models
 {
@@ -14,5 +18,21 @@ namespace ECOURSES.Models
         public string? Imag { get; set; }
         public string? SubjectsID { get; set; }
        // public virtual ICollection<Student> Students { get; set; }
+
+
+
+        public dynamic Subscribers(int id)
+        {
+            ApplicationDbContext db = new();
+            List<CourseStudent> students = new List<CourseStudent>();
+          
+            var count = db.CourseStudent.Count();   
+
+            var cout = students.Where(CourseID == id).cou
+
+
+                     return count;
+
+        }
     }
 }
