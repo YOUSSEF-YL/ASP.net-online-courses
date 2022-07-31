@@ -41,7 +41,7 @@ namespace ECOURSES.Controllers
 
         public IActionResult Courses()
         {
-            return View();
+            return View(_db);
         }
 
 

@@ -21,16 +21,16 @@ namespace ECOURSES.Models
 
 
 
-        public dynamic Subscribers(int id)
+        public int Subscribers(int id)
         {
-            ApplicationDbContext db = new();
-            List<CourseStudent> students = new List<CourseStudent>();
+           // ApplicationDbContext db = new();
+            List<CourseStudent> studentsc = new List<CourseStudent>();
           
-            var count = db.CourseStudent.Count();   
+           // var count = db.CourseStudent.Count();
 
-            var cout = students.Where(CourseID == id).cou
+            // var cout = students.Where(CourseID == id).cou
 
-
+          int count = studentsc.Count(CourseStudent  => CourseStudent.StudentId == id);
                      return count;
 
         }
