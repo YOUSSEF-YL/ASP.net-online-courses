@@ -62,5 +62,20 @@ namespace ECOURSES.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public int Subscribers(int id)
+        {
+            // ApplicationDbContext db = new();
+            var studentsc = _db;
+
+            // var count = db.CourseStudent.Count();
+
+            // var cout = students.Where(CourseID == id).cou
+
+            int count = studentsc.CourseStudent.Count(CourseStudent => CourseStudent.CourseID == id);
+            return count;
+
+        }
     }
 }

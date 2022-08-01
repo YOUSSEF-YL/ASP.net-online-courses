@@ -1,4 +1,5 @@
-﻿using ECOURSES.Models;
+﻿using ECOURSES.Controllers;
+using ECOURSES.Models;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -23,5 +24,7 @@ namespace ECOURSES.Data
 
         public DbSet<Subject> Subjects { get; set; }
         public DbSet <CourseStudent> CourseStudent  { get; set; }
+
+       
     }
 }

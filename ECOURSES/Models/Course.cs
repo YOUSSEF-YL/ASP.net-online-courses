@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Collections.Generic;
+using ECOURSES.Controllers;
 
 namespace ECOURSES.Models
 {
@@ -17,22 +18,33 @@ namespace ECOURSES.Models
         public int TeacherId { get; set; }
         public string? Imag { get; set; }
         public string? SubjectsID { get; set; }
-       // public virtual ICollection<Student> Students { get; set; }
+        public int Subscribers { get; set; }
+        // public virtual ICollection<Student> Students { get; set; }
 
 
 
-        public int Subscribers(int id)
-        {
-           // ApplicationDbContext db = new();
-            List<CourseStudent> studentsc = new List<CourseStudent>();
+        //public int Subscribers(int id,dynamic  courseStudents)
+        //{
+           
           
-           // var count = db.CourseStudent.Count();
 
-            // var cout = students.Where(CourseID == id).cou
+        //    // var count = db.CourseStudent.Count();
 
-          int count = studentsc.Count(CourseStudent  => CourseStudent.StudentId == id);
-                     return count;
+        //    // var cout = students.Where(CourseID == id).cou
 
-        }
+        //    // int count = studentsc.Count(CourseStudent  => CourseStudent.CourseID == id);
+            
+        //    int count = 0;
+            
+        //    foreach (CourseStudent cs in courseStudents)
+        //    {
+        //        if (id == cs.CourseID)
+        //        {
+        //            count = count + 1;
+        //        }
+        //    }
+        //        return count;
+
+        //}
     }
 }
