@@ -1,6 +1,6 @@
 ﻿namespace ECOURSES.Models
 {
-    public class Teacher
+    public class Teacher :User
     {
 
         public int TeacherId { get; set; } 

@@ -4,7 +4,7 @@
 
 namespace ECOURSES.Migrations
 {
-    public partial class a : Migration
+    public partial class JwtModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,11 +15,12 @@ namespace ECOURSES.Migrations
                     CourseID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: true),
                     Duration = table.Column<int>(type: "int", nullable: false),
                     TeacherId = table.Column<int>(type: "int", nullable: false),
                     Imag = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubjectsID = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    SubjectsID = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Subscribers = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +46,7 @@ namespace ECOURSES.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseID = table.Column<int>(type: "int", nullable: false),
                     StudentId = table.Column<int>(type: "int", nullable: false),
-                    StudentRating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    StudentRating = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: true),
                     IsSubde = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -57,15 +58,16 @@ namespace ECOURSES.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    imag = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    imag = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Usename = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.StudentId);
                 });
 
             migrationBuilder.CreateTable(
@@ -84,19 +86,20 @@ namespace ECOURSES.Migrations
                 name: "Teachers",
                 columns: table => new
                 {
-                    TeacherId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TeacherId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Imag = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Subjects = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Facebook = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Linkedin = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Twitter = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Twitter = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Usename = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Teachers", x => x.TeacherId);
                 });
         }
 

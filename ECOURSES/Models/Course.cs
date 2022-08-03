@@ -13,7 +13,9 @@ namespace ECOURSES.Models
         [Key]
         public int CourseID { get; set; }
         public string? CourseName { get; set; }
-        public Decimal Price { get; set; }
+
+        [Column(TypeName = "decimal(0,0)")]
+        public Decimal? Price { get; set; }
         public int  Duration{ get; set; }
         public int TeacherId { get; set; }
         public string? Imag { get; set; }
@@ -25,8 +27,8 @@ namespace ECOURSES.Models
 
         //public int Subscribers(int id,dynamic  courseStudents)
         //{
-           
-          
+
+        
 
         //    // var count = db.CourseStudent.Count();
 
