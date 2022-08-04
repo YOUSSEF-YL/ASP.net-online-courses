@@ -5,7 +5,7 @@ namespace ECOURSES.Models
     [Keyless]
     public class UserLogin
     {
-        public int Usernane { get; set; }
-        public int Passwor { get; set; }
+        public string Usernane { get; set; }
+        public string Passwor { get; set; }
     }
 }

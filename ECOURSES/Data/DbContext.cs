@@ -24,7 +24,9 @@ namespace ECOURSES.Data
 
         public DbSet<Subject> Subjects { get; set; }
         public DbSet <CourseStudent> CourseStudent  { get; set; }
-
+       
+        public DbSet <User> user { get; set; }
+        public DbSet<UserLogin> userLogin { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var decimalProps = modelBuilder.Model
